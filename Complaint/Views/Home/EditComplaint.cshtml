@@ -1,0 +1,46 @@
+﻿
+@model Complaint.Models.Request
+
+@{
+    ViewBag.Title = "Edit complaint";
+}
+
+<h2>Add employee</h2>
+<div class="row">
+
+    <section id="editComplaintForm">
+
+
+
+        @using (Html.BeginForm("EditComplaint", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+
+        {@Html.ValidationSummary(true, "", new {@class= "text-danger"})
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m=>m.Firm)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m=>m.Person)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m=>m.Subject)
+                   
+                </div>
+            </div>
+
+           <div class="form-group">
+             
+               <input type="submit" value="Save" class="btn-default"/>
+        
+
+
+           </div>
+        }
+    </section>
+    </div>

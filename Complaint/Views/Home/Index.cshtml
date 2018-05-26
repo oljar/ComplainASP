@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Complaint.Models.Request>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<div>
+<hr/>
+    @Html.ActionLink("add complaint", "AddComplaint", "Home")
+<hr/>
+
+
+        <div>
+        @foreach (var application in @Model)
+
+        {  <text> @application.Firm</text>
+           <text> @application.Person</text>
+           <text >@application.Subject</text>
+
+
+
+
+
+          <span > | </span >
+
+          @Html.ActionLink("delete complaint ", "DeleteComplaint", "Home", new { id = @application.Id }, null)
+          <span > | </span >
+
+          @Html.ActionLink("edit complaint ", "EditComplaint", "Home", new { id =@application.Id }, null)
+          <br />
+
+
+        }
+
+        </div>
+  </div>
+    
